@@ -31,3 +31,13 @@
 <p>If you're seeing a file named with the assigned wallet's name when you're setting up the wallet, you can see the file is formatted with extension named `.mv.db`. If you open it with a TextEdit application, the text starts with saying `H2encrypt`, and the rest until the end of the line is unreadable.</p>
 
 <p>But, do note if someone else knows your password, they're able to see your seedphrase. So, to harden up your defense, you should set a passphrase, to make someone else unable to access your wallet.</p>
+
+## To avoid downloading and storing large amounts of data, most mobile wallets retrieve information from remote servers, reducing your privacy by disclosing to third parties information about your Bitcoin addresses and balances.
+
+<p>What he meant for downloading and storing large data is the Bitcoin node. Some application provides an option to pick our own node or someone else nodes.</p>
+
+<p>It's not recommended to rely on someone else node, meaning they can modify the consensus rules on their own node. For instance, they can show us a false information, like showing a fake amount from the actual amount of bitcoin we had.</p>
+
+<p>By relying other people node, they'll know your private address and the amount you send or retrieve, which is why he mentioned it'll reduce our privacy. Running and using our own node will make us to be the only person who's able to count the bitcoin nominal you had, and able to read transaction history by yourself.</p>
+
+<p>If you run your own node, you're able to validate which Bitcoin nodes are good and bad.</p>
