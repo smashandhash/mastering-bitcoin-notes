@@ -1,42 +1,33 @@
-# Chapter 01: Introduction
+# Chapter 1: Introduction
 
-<p>Here are my questions and thoughts while reading the introduction part. I may revisit this file again, to see whether I can answer my own questions after I learned further chapters.</p>
+## Bitcoin users communicate with each other using the Bitcoin protocol primarily via the internet, although other transport networks can also be used.
 
-## Questions and Thoughts
+<p>What it means Bitcoin users communicate with each other from Bitcoin protocol is how user's transaction is broadcasted to other users via the Bitcoin node, that follows the rules from the Bitcoin protocol. The way users broadcast it has a various way to do it, mostly using internet, and some doesn't, like how Blockstream uses a satellite to run a Bitcoin node at the moon.</p>
 
-### Units of bitcoin are created through "mining"
+## The Bitcoin protocol stack, available as open source software, can be run on a wide range of computing devices, including laptops and smartphones, making the technology easily accessible.
 
-The statement is:
+<p>At first, I thought he's only talk about the Bitcoin node. Turns out he talks about the whole ecosystem on the Bitcoin network, like running a hot wallet on a computer like Sparrow, or at a smartphone like Aqua Wallet, or running a cold wallet with a Raspberry Pi like how SeedSigner do.</p>
 
-> Units of bitcoin are created through a process called "mining," which involves repeatedly performing a computational task that references a list of recent Bitcoin transactions.
+## Units of bitcoin are created through a process called "mining," which involves repeatedly performing a computational task that references a list of recent Bitcoin transactions.
 
-<p>My thought about units of bitcoin is that the units is already distributed, especially in twenty one million of bitcoin. So, the miners are creating a block to accomplish the transaction between spender and receiver.</p>
+<p>The bitcoin's total supply is fixed to 21 million coins, but it gradually released by the miners, especially when one of them successfully solved the Proof-of-Work puzzle. So, miners not only creating a new block of transaction, but it also runs a Bitcoin node too, so they can check whether the given transaction is valid or not, based on the consensus rules from the Bitcoin protocol.</p>
 
-<p>But when I think about it again, if person A sends 5 BTC to person B, but only has 6 BTC UTXO. Then, it would be reasonable to say that units of bitcoin are created through mining.</p>
+<p>Here's what I need to remember. A node runner running a Bitcoin node, so each transaction using their node is valid, while the miners do the same thing as the node runner, but also adds a new transaction block and given a reward for it.</p>
 
-<p>Again, I need to validate on my own thoughts. Either from the AI or seeking through by reading further or looking at forums.</p>
+## Previously, the double-spend problem was a weakness of digital currency and was addressed by clearing all transactions through a central clearinghouse.
 
-### Bitcoin are build in four essential values from cryptography
+<p>Clearinghouse is traditionally controlled by a single source, either it's a bank, or a digital service like PayPal. The downside of the centralized and doesn't show how they do with our money is hideous, where they have a right to do with our money, either they manipulate it, or lend it to someone else, meaning they're not actually holding our money.</p>
 
-<p>What I knew of Bitcoin protocol, ledger of transactions, Bitcoin nodes, and the proof-of-work algorithm for miners, they're all part of essential values. Here are what I thought:</p>
+<p>In Bitcoin network, people who runs the node are the one who hold the ledger from the first transaction until the latest one. So, by doing this, there's no double-spending, decentralized, and scammers aren't able to manipulate the data, unless there's 51% people doing the same thing.</p>
 
-1. Bitcoin protocol is the one who enables the decentralized transaction without needs from centralized corporates.
-2. Ledger of Transactions, are the list of spender and receiver transaction. From it, we can see how many bitcoin we had based on our private key.
-3. Bitcoin nodes, are one who check whether the transaction is valid or not, following the consensus rules.
-4. Proof-of-work algorithm, an algorithm for miners, where they can get a prize for the one who's able to solve hard-matemathic question with an answer that less than the hash target. But every miners do get transaction fees for validating a transaction.
+## Running on general-use operating systems such as Windows and macOS has certain security disadvantages, however, as these platforms are often insecure and poorly configured.
 
-<p>Pretty honest work, but not sure that what I state above is truly correct. I'll validate it later after accomplish the whole chapter.</p>
+<p>It's called insecure due to the desktop we use isn't mainly used as a bitcoin wallet only, but rather doing something else. This can attracts unwanted things, like virus from downloading files from source that you can't verify whether it's safe or not, or you may had other apps that has an access through your file.</p>
 
-### Double-spending problem on physical money
+<p>The author states poorly configured desktop wallet is generally sees user store their seed phrase on the same hard drive, this may encounter worst scenario like failing hard drive that causes stored coin lost forever. If your wallet is unencrypted, it can get exploited remotely, where hackers can access your computer and accessing your wallet.</p>
 
-<p>Physical or printed money should only be printed with a unique code money and no one should encounter the same money with the same code. Meaning if they found it, one of the printed money is fake.</p>
+<p>If you're using Sparrow desktop wallet, it's best to set the wallet's password, so your seedphrase isn't exposed and encrypted. If you do it, try to check the file on this directory if you're on MacOS `~/{ username }/.sparrow/wallets`.</p>
 
-<p>Even though the central bank are making improvements on their printing machine, the scammers might caught the way they print the newer money. Or people who receives the money, just don't have enough time to check whether it's fake or real.</p>
+<p>If you're seeing a file named with the assigned wallet's name when you're setting up the wallet, you can see the file is formatted with extension named `.mv.db`. If you open it with a TextEdit application, the text starts with saying `H2encrypt`, and the rest until the end of the line is unreadable.</p>
 
-<p>By having a digital money with a feature named digital signature, it'll be secure and no double-spending issue, due to the digital signature is only valid for the one who held the money. Unfortunately, this doesn't end the scammers.</p>
-
-<p>Turns out the scammers isn't just from people, but rather from the government itself. Due to the digital money is based on the physical gold and fiat's currency, where the centralized have an access to do something bad on it.</p>
-
-### What's a HashCash?
-
-<p>Mentioned, says that it's a technology used to create a decentralized peer-to-peer digital money. I think it's related to the proof-of-work algorithm, where the miner should find a hard-mathematical answer to find the correct answer that lower or equal to the hash target.</p>
+<p>But, do note if someone else knows your password, they're able to see your seedphrase. So, to harden up your defense, you should set a passphrase, to make someone else unable to access your wallet.</p>
